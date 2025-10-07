@@ -12,16 +12,19 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   function handlePrevious() {
-    setStep(step > 1 ? step - 1 : step);
+    // setStep(step > 1 ? step - 1 : step); // always use callback function but can directly declare if there is no reference to the initial state. For eg. line no 21 name.name = "tripathi"
+    if (step > 1) setStep((s) => s - 1);
   }
 
   function handleNext() {
-    setStep(step < 3 ? step + 1 : step);
+    // setStep(step < 3 ? step + 1 : step); always use callback function
     // name.name = "tripathi"; manually changing state
+    if (step < 3) setStep((s) => s + 1);
   }
 
   function handleClose() {
-    setIsOpen(!isOpen);
+    // setIsOpen(!isOpen);  use callback
+    setIsOpen((open) => !open);
   }
 
   return (
