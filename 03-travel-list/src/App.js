@@ -6,7 +6,7 @@ import Stats from "./Components/Stats";
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <Logo />
       <Form />
       <PackingList />
